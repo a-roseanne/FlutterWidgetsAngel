@@ -10,6 +10,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+//List View Content
   List<Widget> contentList = [
     Text(
       "Unrivalled luxury, stunning white-sand beaches and an amazing underwater world make Maldives an obvious choice for a true holiday of a lifetime.",
@@ -69,52 +70,116 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text("Visit Maldives"),
         ),
-        // body: Column(
-        //   children: <Widget>[
-        //     Text("A"),
-        //     Text("A"),
-        //     Text("A"),
-        //     Row(
-        //       children: <Widget>[
-        //         Text("A"),
-        //         Text("A"),
-        //         Text("A"),
-        //       ],
-        //     ),
-        //     ListView(
-        //       children: contentList,
-        //     ),
-        //     RaisedButton(child: Text("Fav"), onPressed: null)
-        //   ],
-        // ),
 
-        body: ListView(children: contentList),
+        // body: ListView(children: contentList),
+        body: Container(
+            child: Column(
+              children: <Widget>[
+                //banner
+                Flexible(
+                    flex: 2,
+                    child: Container(
+                        child: Image(
+                      image: AssetImage("assets/bg.jpg"),
+                      fit: BoxFit.cover,
+                    ))),
 
-        // body: Container(
-        //   child: Container(
-        //       decoration: BoxDecoration(
-        //           gradient: LinearGradient(
-        //               begin: Alignment.topRight,
-        //               end: Alignment.bottomLeft,
-        //               colors: <Color>[
-        //             Colors.lightBlue[800],
-        //             Colors.lightBlueAccent
-        //           ])),
-        //       child: Text(
-        //         "Welcome to Maldives!",
-        //         style: TextStyle(
-        //           fontSize: 50,
-        //           fontFamily: "BebasNeue-Regular",
-        //           decoration: TextDecoration.underline,
-        //           decorationColor: Colors.blue[50],
-        //           decorationThickness: 2,
-        //           decorationStyle: TextDecorationStyle.solid,
-        //         ),
-        //       )),
+                //img
+                Flexible(
+                  flex: 1,
+                  child: Container(
+                    decoration: BoxDecoration(color: Colors.blueAccent[800]),
+                    child: Row(
+                      children: <Widget>[
+                        Flexible(
+                            flex: 1,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage('assets/a.jpg')),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(8.0)),
+                              ),
+                              margin: EdgeInsets.all(5),
+                            )),
+                        Flexible(
+                            flex: 1,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage('assets/b.jpg')),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(8.0)),
+                              ),
+                              margin: EdgeInsets.all(5),
+                            )),
+                        Flexible(
+                            flex: 1,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage('assets/c.jpg')),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(8.0)),
+                              ),
+                              margin: EdgeInsets.all(5),
+                            )),
+                        Flexible(
+                            flex: 1,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: const Color(0xff7c94b6),
+                                  image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage('assets/d.jpg')),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(8.0)),
+                                  gradient: LinearGradient(
+                                      begin: Alignment.topCenter,
+                                      end: Alignment.bottomCenter,
+                                      colors: <Color>[
+                                        Colors.blue[600],
+                                        Colors.lightBlueAccent
+                                      ])),
+                              margin: EdgeInsets.all(5),
+                            )),
+                      ],
+                    ),
+                  ),
+                ),
+                Text("Welcome to Maldives!",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 34,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "KaushanScript-Regular",
+                      decoration: TextDecoration.underline,
+                      decorationColor: Colors.blue[50],
+                      decorationThickness: 2,
+                      decorationStyle: TextDecorationStyle.solid,
+                    )),
+                //listview
+                Flexible(
+                    flex: 4,
+                    child: Container(
+                      padding: EdgeInsets.all(10.0),
+                      child: ListView(children: contentList),
+                    )),
+              ],
+            ),
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.bottomRight,
+                    end: Alignment.topLeft,
+                    colors: <Color>[Colors.blue[400], Colors.pink[300]]))),
       ),
     );
   }
