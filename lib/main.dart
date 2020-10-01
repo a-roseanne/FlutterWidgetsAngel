@@ -201,33 +201,31 @@ class _MyAppState extends State<MyApp> {
                         begin: Alignment.topRight,
                         end: Alignment.bottomLeft,
                         colors: <Color>[Colors.blue[700], Colors.pink[400]]))),
-            // Align(
-            //   alignment: Alignment.topRight,
-            // ),
+            Align(
+              alignment: Alignment(0.94, -0.94),
+              child: FloatingActionButton(
+                onPressed: () {
+                  setState(() {
+                    if (pressed) {
+                      pressed = !pressed;
+                    } else {
+                      pressed = !pressed;
+                    }
+                  });
+                },
+                child: Icon(
+                  Icons.flight,
+                  size: 32,
+                  color: pressed ? Colors.pink : Colors.grey,
+                ),
+                splashColor: Colors.pink[100],
+                backgroundColor: Colors.purple[50],
+              ),
+            ),
           ],
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.miniEndTop,
-        floatingActionButton: Container(
-          child: FloatingActionButton(
-            onPressed: () {
-              setState(() {
-                if (pressed) {
-                  pressed = !pressed;
-                } else {
-                  pressed = !pressed;
-                }
-              });
-            },
-            child: Icon(
-              Icons.favorite,
-              color: pressed ? Colors.pink : Colors.grey,
-            ),
-            splashColor: Colors.pink[100],
-            backgroundColor: Colors.purple[50],
-            elevation: 1,
-          ),
-          padding: const EdgeInsets.only(top: 85.0),
-        ),
+        // floatingActionButtonLocation: FloatingActionButtonLocation.miniEndTop,
+        // floatingActionButton: Container(),
       ),
     );
   }
