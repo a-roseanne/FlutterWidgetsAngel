@@ -1,8 +1,8 @@
-# flutterwidgets_angel
+# Flutter Widgets
+This is a flutter project using widgets e.g flexible, floating action button, image, text.
 
-A new Flutter project.
 
-## Getting Started
+## Credits
 
 Angelica R.
 
