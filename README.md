@@ -3,5 +3,4 @@ This is a flutter project using widgets e.g flexible, floating action button, im
 
 
 ## Credits
-
-instagram.com/angel_ca.r
+https://www.instagram.com/angel_ca.r/
